@@ -1,0 +1,9 @@
+Structure of the data files is
+### minr in 1/GeV
+### rstep
+### N=number of N(r) values at given evolution rapidity
+### Initial rapidity Y0 (or eta_0 in case of TBK)
+### Rapidity
+Dipole values at N(r=minr * rstep^n), n=1....N
+### Rapidity 2
+Dipole values
