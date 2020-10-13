@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
     // Here eta_0=0
     datafile="data/dipole-tbk-hera-parent-0.00.dip";
     AmplitudeLib N3(datafile);
-     cout << "File 3: " << N2.GetString() << endl;
+    cout << "File 3: " << N3.GetString() << endl;
     
     cout << "# r [1/GeV]   N(r,eta=0)  N(r,eta=2)  N(r,eta=6)" << endl;
     for (double r=minr; r<maxr; r*=3)
