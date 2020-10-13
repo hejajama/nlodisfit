@@ -58,9 +58,9 @@ AmplitudeLib::AmplitudeLib(std::string datafile)
 
 	std::stringstream ss;
     ss << "Data read from file " << datafile << ", minr: " << minr
-        << " maxr: " << MaxR() << " rpoints: " << rpoints << " Y0=" << MinY() << ", max Y="
+        << " maxr: " << MaxR() << " rpoints: " << rpoints << " initial rapidity " << MinY() << ", maximum rapidity "
         << yvals[yvals.size()-1]
-        << " Q_{s,0}^2(Y=Y0) = " << SaturationScale(0, 0.393469) << " GeV^2 [ N(r^2=2/Q_s^2, Y=0) = 0.3934]"
+        << " Q_{s,0}^2(initial rapidity) = " << SaturationScale(0, 0.393469) << " GeV^2 [ N(r^2=2/Q_s^2) = 0.3934]"
         << " (" << AMPLITUDELIB_VERSION << ")" ;
     info_string = ss.str();
     
@@ -199,6 +199,9 @@ double AmplitudeLib::DipoleAmplitude(double r, double y)
         double y2_ = yvals[yind2];
         double bilin =  (1.0/( (r2_ - r1_)*(y2_ - y1_) ))*( (n[yind][rind])*(r2_ - r)*(y2_ - y) + (n[yind][rind2])*(r - r1_)*(y2_ - y) + (n[yind2][rind])*(r2_ - r)*(y - y1_) + (n[yind2][rind2])*(r - r1_)*(y - y1_) );
         
+        // Handle possible floating point errors
+        if (bilin>1) return 1;
+        if (bilin<0) return 0;
         return bilin;
         
     }
@@ -253,6 +256,9 @@ double AmplitudeLib::DipoleAmplitude(double r, double y)
     
     delete[] tmparray;
     delete[] tmpxarray;
+    
+    if (result < 0) return 0;
+    if (result > 1) return 1;
 
     return result;
 

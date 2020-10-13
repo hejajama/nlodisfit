@@ -23,6 +23,8 @@ enum AMPLITUDE_INTERPOLATION_METHOD
  *
  * Stores the loaded dipole amplitude (loaded by DataFile class), and
  * evaluates the amplitude at given r,Y.
+ *
+ * Note that when using the TBK solutions, then rapidity variable refers to eta
  */
 class AmplitudeLib
 {
@@ -44,13 +46,13 @@ class AmplitudeLib
         ~AmplitudeLib();
     
         /**
-         * Dipole amplitude at given rapidity y
+         * Dipole amplitude at given rapidity Y
          *
          * Evaluates the dipole amplitude at given dipole size r and at
-         * given evolution rapidity Y (Y=0 corresponding to the initial condition Y_0).
+         * given rapidity Y (initial condition is at Y0, dipole is frozen in 0<Y<Y0).
          *
          * @param r dipole size in GeV^-1
-         * @param Y Amount of rapidity evolution. The dipole is evaluated at Y_0 + Y
+         * @param Y rapidity at which the dipole is evaluated
          */
         double DipoleAmplitude(double r, double Y);
 

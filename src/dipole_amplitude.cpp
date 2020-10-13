@@ -57,8 +57,24 @@ int main(int argc, char* argv[])
     cout << "# r [1/GeV]   N(r,Y=0)  N(r,Y=2)  N(r,Y=6)" << endl;
     for (double r=minr; r<maxr; r*=3)
     {
-       cout << std::scientific << std::setprecision(9) << r << " " << N2.DipoleAmplitude(r, 0) << " " << N2.DipoleAmplitude(r, 2) << " " << N2.DipoleAmplitude(r,6) << endl;
+        cout << std::scientific << std::setprecision(9) << r << " " << N2.DipoleAmplitude(r, 0) << " " << N2.DipoleAmplitude(r, 2) << " " << N2.DipoleAmplitude(r,6) << endl;
     }
+
+    
+    cout << "====" << endl;
+    // Case 2:
+    // Here eta_0=0
+    datafile="data/dipole-tbk-hera-parent-0.00.dip";
+    AmplitudeLib N3(datafile);
+     cout << "File 3: " << N2.GetString() << endl;
+    
+    cout << "# r [1/GeV]   N(r,eta=0)  N(r,eta=2)  N(r,eta=6)" << endl;
+    for (double r=minr; r<maxr; r*=3)
+    {
+        // Note that here the argument is eta, not Y
+        cout << std::scientific << std::setprecision(9) << r << " " << N3.DipoleAmplitude(r, 0) << " " << N3.DipoleAmplitude(r, 2) << " " << N3.DipoleAmplitude(r,6) << endl;
+    }
+
      
     return 0;
 }
