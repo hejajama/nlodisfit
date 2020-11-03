@@ -1,4 +1,6 @@
 # nlodisfit
+[![DOI](https://zenodo.org/badge/300266903.svg)](https://zenodo.org/badge/latestdoi/300266903)
+
 BK evolved dipole amplitude fitted to HERA data at NLO
 
 This library provides easy access to the dipole-target scattering amplitude obtained by fitting the HERA reduced cross section data at NLO accuracy.
