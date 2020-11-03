@@ -3,9 +3,11 @@ BK evolved dipole amplitude fitted to HERA data at NLO
 
 This library provides easy access to the dipole-target scattering amplitude obtained by fitting the HERA reduced cross section data at NLO accuracy.
 
+This is the dataset version 1.0 dated on 2020-11-03. 
+
 ## Reference
 When using this code, please cite
-[1] G. Beuf, H. Hänninen, T. Lappi, H. Mäntysaari, Color Glass Condensate at next-to-leading order meets HERA data. e-Print: 2007.01645 [hep-ph]
+[1] G. Beuf, H. Hänninen, T. Lappi, H. Mäntysaari, Color Glass Condensate at next-to-leading order meets HERA data. Phys. Rev. D102 (2020) 074028, e-Print: 2007.01645 [hep-ph]
 
 Questions and comments to heikki.mantysaari@jyu.fi and henri.j.hanninen@jyu.fi
 
